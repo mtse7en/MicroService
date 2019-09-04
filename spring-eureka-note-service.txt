@@ -1,0 +1,3 @@
+This service manage CRUD operations for ClientApp and When be any action call send mail with ActiveMQ to email-service. 
+If ActiveMQ service is down , you can use restTemplate for calling sendmail api from email-service.
+I added to all DB operations to delay 10 seconds.

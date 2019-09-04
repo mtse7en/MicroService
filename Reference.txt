@@ -1,0 +1,5 @@
+References: 
+Docker and Mongo DB instal : https://hub.docker.com/_/mongo
+Spring Boot & Micro Services : https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-intro-to-microservices-part-1-c0d24cd422c3
+Mongo DB Using : https://www.mongodb.com/blog/post/getting-started-with-mongodb-and-java-part-i
+ActiveMq Using : https://activemq.apache.org/hello-world

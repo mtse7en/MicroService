@@ -1,0 +1,23 @@
+It’s a proxy, gateway, an intermediate layer between the users and our services.
+
+1- Maps between a prefix path like 
+
+# Map paths to services
+zuul.routes.user-service.path=/userservice/**
+zuul.routes.user-service.service-id=user-service
+
+# Map paths to services
+zuul.routes.note-service.path=/noteservice/**
+zuul.routes.note-service.service-id=note-service
+
+at application.properties file.  It uses Eureka server to route the requested service.
+
+2- It load balances (using Ribbon) between instances of a service running on different ports. And we use to configure timeout like : 
+
+# Global - affects every Ribbon instances (not only your services but also Eureka client!)
+ribbon.ReadTimeout = 60000
+
+# Per service
+<clientName>.ribbon.ReadTimeout = 60000
+
+at application.properties file.

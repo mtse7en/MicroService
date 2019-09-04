@@ -1,0 +1,31 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+
+        <div class="list-group list-group-flush">
+            <a *ngFor="let item of leftItems" href="javascript:;" (click)="onLeftMenuClicked(item)"
+                class="list-group-item list-group-item-action bg-light">{{item.noteHeader}}</a>
+
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+        <div class="container-fluid" [hidden]="currentItem == null">
+            <div>
+                <input type="text" class="full" #txtHeader>
+            </div>
+            <div>
+                <quill-editor #txtContent format="html"></quill-editor>
+            </div>
+        </div>
+
+
+        <button [hidden]="currentItem == null" (click)="onSave()"  type="button" class="btn btn-primary btn-lg pull-right" >Save</button>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->

@@ -1,0 +1,18 @@
+This service necessary to use authentication with Token, I add to header token with userId. to manage client side.
+
+I add to dummy users for login. If you need to add anoter user, you can add users list at UserDetailsServiceImpl.class like ;
+public class UserDetailsServiceImpl implements UserDetailsService  {
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	@CrossOrigin(origins = "http://localhost:4200")
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		// hard coding the users. All passwords must be encoded.
+		final List<AppUser> users = Arrays.asList(
+			new AppUser(1, "test1", encoder.encode("test1"), "ADMIN"),
+			new AppUser(2, "test2", encoder.encode("test2"), "ADMIN"),
+			new AppUser(3, "test3", encoder.encode("test3"), "ADMIN")
+		);
+		

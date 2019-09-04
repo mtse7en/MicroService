@@ -1,0 +1,4 @@
+Our application isnt complex project for microservices. So I use this service to userId releation with notes. 
+User service ask notes to note-services with http request.
+
+User service add three user to database, for using application.( These users are the same at spring-eureka-auth.) 

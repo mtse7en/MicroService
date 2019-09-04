@@ -1,0 +1,38 @@
+This micro service has a one mission. It is send email. 
+I use gmail api for it. You should have to one system mail. And configure it.(http://procaresupport.com/gmail-less-secure-apps-setting/)
+
+To test you should add to mailInfo. For authenticated users mail. And you can add to mailInfo object to database like;
+
+at SpringEurekaEMailApp.class  
+public static void Initialize() {
+		DbContext.Delete("1");
+		MailInfo info = new MailInfo("1","acoount@gmail.com"); 
+		try {
+			DbContext.SaveMailInfo(info);
+		} catch (Exception e) {
+ 			e.printStackTrace();
+		}
+ 
+		System.out.println("Finito");
+	}
+	
+	
+
+You should configure at MailSender.class to sendmail like ;
+public class MailSender {
+	public static void SendMail(Email email) throws NoSuchProviderException {
+
+		String to = email.getDestinationAddress();
+		String subject = email.getMailHeader();
+		String msg = email.getMailContent();
+		final String from = "account@gmail.com"; // System gmail adres
+		final String password = "password"; // System gmail adres password
+		
+		
+
+I add to databse every sending emails.
+
+This service has two Apis.
+One of them MessageConsumer.class has listener method for use ActiveMq,the other one EmailController.class has sendEmail api to use https request.
+
+

@@ -1,0 +1,16 @@
+<header>
+  <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
+    <div class="full">
+      <a class="navbar-brand" [routerLink]='["/"]'> <i class="fa fa-notes"></i> NOTES</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <button *ngIf="this.globals.CreateButtonVisible" type="button" class="btn btn-primary btn-lg pull-right" (click)="createNote()">+ Create</button>
+
+
+     
+    </div>
+  </nav>
+</header>
